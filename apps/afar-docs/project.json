@@ -1,0 +1,89 @@
+{
+  "name": "afar-docs",
+  "$schema": "https://www.unpkg.com/nx@15.6.2/schemas/project-schema.json",
+  "sourceRoot": "apps/afar-docs/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/afar-docs",
+        "index": "apps/afar-docs/src/index.html",
+        "baseHref": "/",
+        "main": "apps/afar-docs/src/main.tsx",
+        "tsConfig": "apps/afar-docs/tsconfig.app.json",
+        "assets": [
+          "apps/afar-docs/src/favicon.ico",
+          "apps/afar-docs/src/assets"
+        ],
+        "styles": ["apps/afar-docs/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "apps/afar-docs/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/afar-docs/src/environments/environment.ts",
+              "with": "apps/afar-docs/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/webpack:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "afar-docs:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "afar-docs:build:development"
+        },
+        "production": {
+          "buildTarget": "afar-docs:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/afar-docs/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/afar-docs/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
