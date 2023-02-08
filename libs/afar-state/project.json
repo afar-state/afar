@@ -1,5 +1,6 @@
 {
   "name": "afar-state",
+  "$schema": "https://www.unpkg.com/nx/schemas/project-schema.json",
   "sourceRoot": "libs/afar-state/src",
   "projectType": "library",
   "tags": [],

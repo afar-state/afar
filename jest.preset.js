@@ -1,3 +1,8 @@
 const nxPreset = require('@nrwl/jest/preset').default;
 
-module.exports = { ...nxPreset };
+const esModules = ['nanoid'].join('|');
+
+module.exports = {
+  ...nxPreset,
+  transformIgnorePatterns: [`/node_modules/(?!${esModules})`]
+};

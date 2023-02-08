@@ -1,7 +1,9 @@
-import { fetch } from './fetch';
+import { AfarFetch } from './fetch';
 
 describe('fetch', () => {
-  it('should work', () => {
-    expect(fetch()).toEqual('fetch');
+  it('should not crash', () => {
+    const { fetch } = new AfarFetch();
+
+    expect(fetch).toBeDefined();
   });
 });

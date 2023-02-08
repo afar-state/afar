@@ -1,18 +1,17 @@
 {
-  "name": "fetch",
+  "name": "fetch-auth-injector",
   "$schema": "https://www.unpkg.com/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/fetch/src",
+  "sourceRoot": "libs/fetch-auth-injector/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/fetch",
-        "main": "libs/fetch/src/index.ts",
-        "tsConfig": "libs/fetch/tsconfig.lib.json",
-        "project": "libs/fetch/package.json",
-        "updateBuildableProjectDepsInPackageJson": true,
+        "outputPath": "dist/libs/fetch-auth-injector",
+        "main": "libs/fetch-auth-injector/src/index.ts",
+        "tsConfig": "libs/fetch-auth-injector/tsconfig.lib.json",
+        "project": "libs/fetch-auth-injector/package.json",
         "format": [
           "esm"
         ],
@@ -22,7 +21,7 @@
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs fetch {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs fetch-auth-injector {args.ver} {args.tag}"
       },
       "dependsOn": ["build"]
     },
@@ -30,14 +29,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/fetch/**/*.ts"]
+        "lintFilePatterns": ["libs/fetch-auth-injector/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/fetch/jest.config.ts",
+        "jestConfig": "libs/fetch-auth-injector/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

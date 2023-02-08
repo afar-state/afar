@@ -1,6 +1,6 @@
 {
   "name": "afar-docs",
-  "$schema": "https://www.unpkg.com/nx@15.6.2/schemas/project-schema.json",
+  "$schema": "https://www.unpkg.com/nx/schemas/project-schema.json",
   "sourceRoot": "apps/afar-docs/src",
   "projectType": "application",
   "targets": {
