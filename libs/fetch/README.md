@@ -97,19 +97,3 @@ const fetchBasic = startPipe(undefined, {
   log: (...args: Parameters<Console['log']>) => console.log('[piped-fetch]', ...args);
 })
 ```
-
-```ts
-import { startPipe } from '@afar/fetch';
-import { getSessionPipe } from '@afar/fetch/pipes/session';
-import { getAuthPipe } from '@afar/fetch/pipes/auth';
-import { getRetryPipe } from '@afar/fetch/pipes/retry';
-
-const myFetch = startPipe()
-  .pipe(getSessionPipe(mySessionId))
-  .pipe(getAuthPipe(getAuthToken))
-  .pipe(getRetryPipe());
-
-myFetch('https://...')
-  .then((res) => res.json())
-  .catch(console.error);
-```
