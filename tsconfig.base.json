@@ -15,12 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@afar/fetch": ["libs/fetch/src/index.ts"],
-      "@afar/fetch-auth-injector": ["libs/fetch-auth-injector/src/index.ts"],
-      "@afar/fetch-retry-handler": ["libs/fetch-retry-handler/src/index.ts"],
-      "@afar/fetch-session-injector": [
-        "libs/fetch-session-injector/src/index.ts"
-      ],
       "@afar/state": ["libs/afar-state/src/index.ts"]
     }
   },
