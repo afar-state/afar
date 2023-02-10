@@ -11,9 +11,7 @@
         "outputPath": "dist/libs/fetch",
         "main": "libs/fetch/src/index.ts",
         "tsConfig": "libs/fetch/tsconfig.lib.json",
-        "assets": ["libs/fetch/*.md"],
-        "updateBuildableProjectDepsInPackageJson": true,
-        "buildableProjectDepsInPackageJsonType": "peerDependencies"
+        "assets": ["libs/fetch/*.md", "libs/fetch/LICENCE"]
       }
     },
     "publish": {
