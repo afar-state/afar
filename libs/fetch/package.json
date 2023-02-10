@@ -1,0 +1,24 @@
+{
+  "name": "@afar/fetch",
+  "version": "0.0.4",
+  "type": "module",
+  "license": "MIT",
+  "description": "A fetch wrapper with pipes",
+  "module": "./src/index.js",
+  "author": {
+    "name": "Sushruth Sastry"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afar-state/afar"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./pipes/auth": "./src/pipes/auth.js",
+    "./pipes/retry": "./src/pipes/retry.js",
+    "./pipes/session": "./src/pipes/session.js"
+  },
+  "peerDependencies": {
+    "jwt-decode": "3.1.2"
+  }
+}

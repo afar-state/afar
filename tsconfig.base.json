@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@afar/fetch": ["libs/fetch/src/index.ts"],
       "@afar/state": ["libs/afar-state/src/index.ts"]
     }
   },
