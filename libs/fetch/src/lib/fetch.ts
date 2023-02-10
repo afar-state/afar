@@ -17,7 +17,7 @@ function startFetchPipe(fetcher: RequestFetcher = fetch, logger?: PartialConsole
     const req = new Request(input, init);
 
     if(pipeFn) {
-      return pipeFn(req, _fetch, logger)
+      return pipeFn(req, fetcher, logger)
     }
 
     return fetcher(req)

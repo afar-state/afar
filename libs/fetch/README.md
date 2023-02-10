@@ -53,7 +53,7 @@ import type { Pipe } from '@afar/fetch';
 
 const addCorrelationIdPipe: Pipe = (req, fetcher, logger) => {
   req.headers.set('correlation-id', Math.random().toString());
-  logger?.info('Correlation ID has been set'); // `startPipe()` decides what `logger` will be.
+  logger?.info?.('Correlation ID has been set'); // `startPipe()` decides what `logger` will be.
   return fetcher(req);
 };
 
