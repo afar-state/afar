@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@afar/fetch": ["libs/fetch/src/index.ts"],
-      "@afar/state": ["libs/afar-state/src/index.ts"]
+      "@afar/state": ["libs/state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

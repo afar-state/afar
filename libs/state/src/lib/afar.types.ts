@@ -15,16 +15,16 @@ export type AsyncReducer<S, A> = (
 ) => MaybeReturn<MaybePromise<Partial<S>>>;
 
 export type StoreInterface<S> = {
-  getState: () => S,
-  setState: (state: S | Partial<S>) => void,
-} & StoreHook<S>
+  getState: () => S;
+  setState: (state: S | Partial<S>) => void;
+} & StoreHook<S>;
 
 export type StoreHook<S> = {
   (): S;
-  <T>(selector: (state: S) => T): T
+  <T>(selector: (state: S) => T): T;
 };
 
 export type AfarReturn<S, A> = {
-  useStore: Pick<StoreInterface<S>, 'getState'> & StoreHook<S>,
-  dispatch: AsyncDispatch<S, A>,
-}
+  useStore: Pick<StoreInterface<S>, 'getState'> & StoreHook<S>;
+  dispatch: AsyncDispatch<S, A>;
+};

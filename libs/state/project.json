@@ -1,7 +1,7 @@
 {
-  "name": "afar-state",
+  "name": "state",
   "$schema": "https://www.unpkg.com/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/afar-state/src",
+  "sourceRoot": "libs/state/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,23 +9,23 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/afar-state/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/state/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "build": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/afar-state",
-        "tsConfig": "libs/afar-state/tsconfig.lib.json",
-        "project": "libs/afar-state/package.json",
-        "entryFile": "libs/afar-state/src/index.ts",
+        "outputPath": "dist/libs/state",
+        "tsConfig": "libs/state/tsconfig.lib.json",
+        "project": "libs/state/package.json",
+        "entryFile": "libs/state/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/afar-state/README.md",
+            "glob": "libs/state/README.md",
             "input": ".",
             "output": "."
           }
@@ -36,7 +36,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/afar-state/jest.config.ts",
+        "jestConfig": "libs/state/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
