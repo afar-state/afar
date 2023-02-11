@@ -1,5 +1,4 @@
-import type { PartialConsole, Pipe } from '../lib/fetch';
-import decode from 'jwt-decode';
+import type { PartialConsole, Tie } from '../lib/fetch';
 
 type StringKeys<T> = keyof {
   [K in keyof T as T[K] extends string ? K : never]: T[K];
@@ -7,17 +6,19 @@ type StringKeys<T> = keyof {
 
 export type TokenKey = StringKeys<URL>;
 export type TokenGetter = () => Promise<string | undefined>;
+export type TokenDecode = (token: string) => { exp?: number } | undefined;
 
 const tokenStore = new Map<string, string>();
 
-export function getAuthPipe(
+export function getAuthTie(
   getAuthToken: TokenGetter,
+  decodeToken: TokenDecode,
   tokenKeyFromUrl: TokenKey = 'origin'
-): Pipe {
+): Tie {
   return async (req, fetcher, logger) => {
     const tokenKey = new URL(req.url)[tokenKeyFromUrl];
     try {
-      const token = await getTokenMemoized(tokenKey, getAuthToken, logger);
+      const token = await getTokenMemoized(tokenKey, getAuthToken, decodeToken, logger);
       if (token) req.headers.set('Authorization', `Bearer ${token}`);
       // eslint-disable-next-line no-empty
     } finally {
@@ -30,12 +31,13 @@ export function getAuthPipe(
 async function getTokenMemoized(
   key: string,
   getAuthToken: TokenGetter,
-  logger?: PartialConsole
+  decodeToken: TokenDecode,
+  logger?: PartialConsole,
 ) {
   let token: string | undefined = tokenStore.get(key);
 
   if (token) {
-    const decoded = decode<{ exp?: number }>(token);
+    const decoded = decodeToken(token);
     if (decoded?.exp && decoded.exp < Date.now() / 1000 - 30) {
       tokenStore.delete(key);
       logger?.info?.(

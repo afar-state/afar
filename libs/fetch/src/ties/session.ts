@@ -1,4 +1,4 @@
-import type { Pipe } from '../lib/fetch';
+import type { Tie } from '../lib/fetch';
 
 export type HybridSessionIdGetter =
   | (() => string | undefined | Promise<string | undefined>)
@@ -15,10 +15,10 @@ function getter(getterArg: HybridSessionIdGetter) {
   return getterArg;
 }
 
-export function getSessionPipe(
+export function getSessionTie(
   getterArg: HybridSessionIdGetter,
   headerName = 'session-id'
-): Pipe {
+): Tie {
   return async (req, fetcher) => {
     if (!sessionId) sessionId = (await getter(getterArg)) || defaultSessionId;
     req.headers.set(headerName, sessionId);

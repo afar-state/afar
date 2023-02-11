@@ -1,63 +1,78 @@
 # @afar/fetch
 
-A tiny library that allows you to create a slightly customized version of `fetch`, in a pipe-able way.
+A tiny library that allows you to create a slightly customized version of `fetch`, in a chainable way.
 
-This package is an `esmodule`.
+The terminology used for this library is from train tracks - a **Tie** is a rectangular support for the rails in railroad tracks. It supports the rails.
+
+I see what this library achieves similar to that - something that helps build a solid _rail road_ for network calls on which requests go through and responses come back. It also saves a (very) few bytes from the library `¯\_(ツ)_/¯`
+
+This package is an es module.
+
+## Install
+
+```sh
+npm i @afar/fetch
+# OR
+yarn add @afar/fetch
+```
+
+## Stats
 
 ## Use cases
 
-I want to add a session ID to all calls I get through `fetch`.
+I want to add a session ID to all calls I make through `fetch`.
 
 ```ts
-import { startPipe } from '@afar/fetch';
-import { getSessionPipe } from '@afar/fetch/pipes/session';
+import { start } from '@afar/fetch';
+import { getSessionTie } from '@afar/fetch/ties/session';
 
 const mySessionId = '...';
 
-const fetchWithSession = startPipe().pipe(getSessionPipe(mySessionId));
+const fetchWithSession = start().tie(getSessionTie(mySessionId));
 ```
 
 Actually, I want to add a bearer token to all calls I get instead.
 
 ```ts
-// Note -> this pipe (alone) needs the jwt-decode package as a peerDependency.
-import { getAuthPipe } from '@afar/fetch/pipes/auth';
+// Note -> this Tie (alone) needs the jwt-decode package as a peerDependency.
+import { getAuthTie } from '@afar/fetch/ties/auth';
+import decode from 'jwt-decode'; // <- bring your own jwt decoder
 
 async function getAuthToken() {
   // contains mechanism to refresh an expired token
 }
 
-const fetchWithAuth = startPipe().pipe(getAuthPipe(getAuthToken));
+const fetchWithAuth = start().tie(getAuthTie(getAuthToken, decode));
 ```
 
 I now want to achieve both of the above
 
 ```ts
-const fetchWithEverything = startPipe()
-  .pipe(getSessionPipe(mySessionId))
-  .pipe(getAuthPipe(getAuthToken));
+const fetchWithEverything = start()
+  .tie(getSessionTie(mySessionId))
+  .tie(getAuthTie(getAuthToken));
 ```
 
 On top of that, I want to automatically retry on errors (by default retry on `429`, `500`, `502`, `503` and `504`)
 
 ```ts
-import { getRetryPipe } from '@afar/fetch/pipes/retry';
+import { getRetryTie } from '@afar/fetch/ties/retry';
 
-const fetchPro = fetchWithEverything.pipe(getRetryPipe());
+const fetchPro = fetchWithEverything.tie(getRetryTie());
 ```
 
-I want to write my own pipe
+I want to write my own Tie
 
 ```ts
-import type { Pipe } from '@afar/fetch';
+import type { Tie } from '@afar/fetch';
 
-const addCorrelationIdPipe: Pipe = (req, fetcher, logger) => {
+const addCorrelationIdTie: Tie = (req, fetcher, logger) => {
   req.headers.set('correlation-id', Math.random().toString());
-  logger?.info?.('Correlation ID has been set'); // `startPipe()` decides what `logger` will be.
+  logger?.info?.('Correlation ID has been set'); // `start()` decides what `logger` will be.
   return fetcher(req);
 };
 
-function getHeaderPipe(headers: Headers): Pipe {
+function getHeaderTie(headers: Headers): Tie { //<- this is actually available at '@afar/fetch/ties/headers'
   return (req, fetcher) => {
     headers.forEach((value, key) => {
       req.headers.set(key, value);
@@ -67,8 +82,8 @@ function getHeaderPipe(headers: Headers): Pipe {
   };
 }
 
-const fetchUltra = fetchPro.pipe(addCorrelationIdPipe).pipe(
-  getHeaderPipe(
+const fetchUltra = fetchPro.tie(addCorrelationIdTie).tie(
+  getHeaderTie(
     new Headers({
       'app-name': 'App Name',
       'content-type': 'application/json',
@@ -83,17 +98,17 @@ I want to use `node-fetch` instead of `window.fetch` or Node 18's in-built `fetc
 ```ts
 import { fetch } from 'node-fetch';
 
-const fetchBasic = startPipe(fetch);
+const fetchBasic = start(fetch);
 ```
 
-I want in-built pipes to log things into console
+I want in-built Ties to log things into console
 
 ```ts
-const fetchBasic = startPipe(fetch, console)
+const fetchBasic = start(fetch, console)
 
 // OR if you like to customize logging, 👇
 
-const fetchBasic = startPipe(undefined, {
-  log: (...args: Parameters<Console['log']>) => console.log('[piped-fetch]', ...args);
+const fetchBasic = start(undefined, {
+  log: (...args: Parameters<Console['log']>) => console.log('[Tied-fetch]', ...args);
 })
 ```

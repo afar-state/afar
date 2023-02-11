@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "type": "module",
   "license": "MIT",
-  "description": "A fetch wrapper with pipes",
+  "description": "A fetch wrapper with chainable behavior",
   "module": "./src/index.js",
   "exports": {
     ".": "./src/index.js",
-    "./pipes/auth": "./src/pipes/auth.js",
-    "./pipes/retry": "./src/pipes/retry.js",
-    "./pipes/session": "./src/pipes/session.js"
+    "./ties/auth": "./src/ties/auth.js",
+    "./ties/retry": "./src/ties/retry.js",
+    "./ties/session": "./src/ties/session.js"
   },
   "peerDependencies": {
     "jwt-decode": "3.1.2"

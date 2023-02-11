@@ -1,4 +1,4 @@
-import type { Pipe } from "../lib/fetch";
+import type { Tie } from "../lib/fetch";
 
 function waitFor(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -19,9 +19,9 @@ export function defaultGetRetryTimeout(res: Response, retries: number, maxRetrie
   return null;
 }
 
-export function getRetryPipe(
+export function getRetryTie(
   getRetryTimeout = defaultGetRetryTimeout
-): Pipe {
+): Tie {
   return async (req, fetcher, logger) => {
     let retries = 0;
     let res = await fetcher(req);

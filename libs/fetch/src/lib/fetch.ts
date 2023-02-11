@@ -1,36 +1,36 @@
 export type RequestFetcher = (req: Request) => Promise<Response>;
 export type PartialConsole = Partial<Pick<Console, 'log' | 'info' | 'warn' | 'error'>>
 
-export interface Pipe {
+export interface Tie {
   (req: Request, last: RequestFetcher, logger?: PartialConsole): Promise<Response>
   name?: string;
 }
 
-export interface FetchPiper {
+export interface FetchRail {
   (input: RequestInfo, init?: RequestInit): Promise<Response>;
-  pipe: (pipe: Pipe) => FetchPiper;
+  tie: (tie: Tie) => FetchRail;
   logger?: PartialConsole;
 }
 
-function startFetchPipe(fetcher: RequestFetcher = fetch, logger?: PartialConsole, pipeFn?: Pipe) {
+function _start(fetcher: RequestFetcher = fetch, logger?: PartialConsole, tieFn?: Tie) {
   function _fetch(input: RequestInfo, init?: RequestInit) {
     const req = new Request(input, init);
 
-    if(pipeFn) {
-      return pipeFn(req, fetcher, logger)
+    if(tieFn) {
+      return tieFn(req, fetcher, logger)
     }
 
     return fetcher(req)
   }
 
-  function pipe(pipe: Pipe) {
-    return startFetchPipe(_fetch, logger, pipe);
+  function tie(tie: Tie) {
+    return _start(_fetch, logger, tie);
   }
 
-  _fetch.pipe = pipe;
+  _fetch.tie = tie;
   _fetch.logger = logger;
 
   return _fetch
 }
 
-export const startPipe = startFetchPipe as (fetcher?: RequestFetcher, logger?: PartialConsole) => FetchPiper;
+export const start = _start as (fetcher?: RequestFetcher, logger?: PartialConsole) => FetchRail;
