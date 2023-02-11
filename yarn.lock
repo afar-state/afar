@@ -2343,6 +2343,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rollup/plugin-terser@npm:0.4.0":
+  version: 0.4.0
+  resolution: "@rollup/plugin-terser@npm:0.4.0"
+  dependencies:
+    serialize-javascript: ^6.0.0
+    smob: ^0.0.6
+    terser: ^5.15.1
+  peerDependencies:
+    rollup: ^2.x || ^3.x
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 0988472b3cd15756cd8d630a7f133526167d4226f47608a12e7d6744f59f23704170a064213efc1a4286636c206c3e1528de0e944e48d28ab98cc84ee09fa480
+  languageName: node
+  linkType: hard
+
 "@rollup/plugin-url@npm:^7.0.0":
   version: 7.0.0
   resolution: "@rollup/plugin-url@npm:7.0.0"
@@ -3509,6 +3525,7 @@ __metadata:
     "@nrwl/webpack": 15.6.2
     "@nrwl/workspace": 15.6.2
     "@pmmmwh/react-refresh-webpack-plugin": ^0.5.7
+    "@rollup/plugin-terser": 0.4.0
     "@rollup/plugin-url": ^7.0.0
     "@svgr/rollup": ^6.1.2
     "@svgr/webpack": ^6.1.2
@@ -3541,7 +3558,6 @@ __metadata:
     tslib: ^2.3.0
     typescript: ~4.8.2
     url-loader: ^4.1.1
-    zustand: 4.3.2
   dependenciesMeta:
     "@parcel/watcher":
       built: false
@@ -10911,6 +10927,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"smob@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "smob@npm:0.0.6"
+  checksum: 360b8b72896974411ec6ca9a352b306bd4233aea44309dbebaeb41fc822cf770b094589e42a8a025ae291f043cbfc4199fc01dd909e45c7bd3c23d287c7e5bac
+  languageName: node
+  linkType: hard
+
 "sockjs@npm:^0.3.24":
   version: 0.3.24
   resolution: "sockjs@npm:0.3.24"
@@ -11476,6 +11499,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"terser@npm:^5.15.1":
+  version: 5.16.3
+  resolution: "terser@npm:5.16.3"
+  dependencies:
+    "@jridgewell/source-map": ^0.3.2
+    acorn: ^8.5.0
+    commander: ^2.20.0
+    source-map-support: ~0.5.20
+  bin:
+    terser: bin/terser
+  checksum: d3c2ac1c2723c37b698b25b68d76fd315a1277fddde113983d5783d1f2a01dd7b8ed83ba3f54e5e65f0b59dd971ed7be2fdf8d4be94ec694b2d27832d2e7561f
+  languageName: node
+  linkType: hard
+
 "test-exclude@npm:^6.0.0":
   version: 6.0.0
   resolution: "test-exclude@npm:6.0.0"
@@ -11942,15 +11979,6 @@ __metadata:
     querystringify: ^2.1.1
     requires-port: ^1.0.0
   checksum: fbdba6b1d83336aca2216bbdc38ba658d9cfb8fc7f665eb8b17852de638ff7d1a162c198a8e4ed66001ddbf6c9888d41e4798912c62b4fd777a31657989f7bdf
-  languageName: node
-  linkType: hard
-
-"use-sync-external-store@npm:1.2.0":
-  version: 1.2.0
-  resolution: "use-sync-external-store@npm:1.2.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
   languageName: node
   linkType: hard
 
@@ -12442,22 +12470,5 @@ __metadata:
   version: 0.1.0
   resolution: "yocto-queue@npm:0.1.0"
   checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
-  languageName: node
-  linkType: hard
-
-"zustand@npm:4.3.2":
-  version: 4.3.2
-  resolution: "zustand@npm:4.3.2"
-  dependencies:
-    use-sync-external-store: 1.2.0
-  peerDependencies:
-    immer: ">=9.0"
-    react: ">=16.8"
-  peerDependenciesMeta:
-    immer:
-      optional: true
-    react:
-      optional: true
-  checksum: fc443abf5bc9deac0d4e375847e7914e44c7ffc9f7f09b60e466cb9bbbcf5a46706bf2f9c8b9e6e6c9a1c5aea0bd6123cbf9fbcd39788ae27d8494d505969ae8
   languageName: node
   linkType: hard
