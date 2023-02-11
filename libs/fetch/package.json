@@ -11,9 +11,6 @@
     "./ties/retry": "./src/ties/retry.js",
     "./ties/session": "./src/ties/session.js"
   },
-  "peerDependencies": {
-    "jwt-decode": "3.1.2"
-  },
   "author": {
     "name": "Sushruth Sastry",
     "url": "https://github.com/sushruth"
