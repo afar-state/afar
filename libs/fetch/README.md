@@ -31,7 +31,7 @@ const mySessionId = '...';
 const fetchWithSession = start().tie(getSessionTie(mySessionId));
 ```
 
-Actually, I want to add a bearer token to all calls I get instead.
+Actually, I want to add a bearer token to all calls I make instead.
 
 ```ts
 // Note -> this Tie (alone) needs the jwt-decode package as a peerDependency.
@@ -93,7 +93,7 @@ const fetchUltra = fetchPro.tie(addCorrelationIdTie).tie(
 );
 ```
 
-I want to use `node-fetch` instead of `window.fetch` or Node 18's in-built `fetch`.
+I want to use `node-fetch` instead of either `window.fetch` or Node 18's in-built `fetch`.
 
 ```ts
 import { fetch } from 'node-fetch';
