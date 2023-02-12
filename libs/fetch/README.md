@@ -4,7 +4,7 @@ A tiny library that allows you to create a slightly customized version of `fetch
 
 The terminology used for this library is from train tracks - a **Tie** is a rectangular support for the rails in railroad tracks. It supports the rails.
 
-I see what this library achieves similar to that - something that helps build a solid _rail road_ for network calls on which requests go through and responses come back. It also saves a (very) few bytes from the library `¯\_(ツ)_/¯`
+I see what this library achieves as something similar to that - it helps build a solid _rail road_ for network calls on which requests go through and responses come back. This name also saves a (very) few bytes from the library `¯\_(ツ)_/¯`
 
 This package is an es module.
 
