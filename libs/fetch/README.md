@@ -39,7 +39,9 @@ import { getAuthTie } from '@afar/fetch/ties/auth';
 import decode from 'jwt-decode'; // <- bring your own jwt decoder
 
 async function getAuthToken() {
-  // contains mechanism to refresh an expired token
+  // contains mechanism to get a new token.
+  // the Tie bellow calls this only when token
+  // about to expire in 30 seconds time.
 }
 
 const fetchWithAuth = start().tie(getAuthTie(getAuthToken, decode));
