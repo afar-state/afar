@@ -1,4 +1,4 @@
-export * from './src/lib/fetch';
+export * from './src/index';
 export * from './src/ties/auth';
 export * from './src/ties/headers';
 export * from './src/ties/retry';

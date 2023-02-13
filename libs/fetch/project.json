@@ -28,14 +28,15 @@
         "outputPath": "dist/libs/fetch",
         "compiler": "tsc",
         "format": [
-          "cjs"
+          "cjs",
+          "esm"
         ],
         "deleteOutputPath": false,
         "generateExportsField": false,
         "main": "libs/fetch/index.ts",
         "tsConfig": "libs/fetch/tsconfig.lib.json",
         "project": "libs/fetch/package.json",
-        "rollupConfig": "libs/fetch/rollup.config.cjs"
+        "rollupConfig": "tools/configs/rollup.lib.config.cjs"
       },
       "dependsOn": [
         "build:exports"
