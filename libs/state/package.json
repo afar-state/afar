@@ -1,4 +1,12 @@
 {
   "name": "@afar/state",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./utils/chain": "./dist/src/utils/chain.js"
+  },
+  "devDependencies": {
+    "zustand": "4.3.3"
+  }
 }
