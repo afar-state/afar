@@ -15,7 +15,7 @@ export type AsyncReducer<S, A> = (
   getState: GetStateWithSelector<S>,
   action: A,
   dispatch: AsyncDispatch<S, A>
-) => MaybeReturn<MaybePromise<Partial<S>>>;
+) => MaybeReturn<MaybePromise<Maybe<Partial<S>>>>;
 
 export type StoreInterface<S> = {
   getState: GetStateWithSelector<S>;

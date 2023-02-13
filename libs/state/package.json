@@ -4,7 +4,9 @@
   "type": "module",
   "exports": {
     ".": "./dist/src/index.js",
-    "./utils/chain": "./dist/src/utils/chain.js"
+    "./utils/chain": "./dist/src/utils/chain.js",
+    "./utils/phasor": "./dist/src/utils/phasor/index.js",
+    "./utils/phasor-state": "./dist/src/utils/phasor-state/index.js"
   },
   "devDependencies": {
     "zustand": "4.3.3"
