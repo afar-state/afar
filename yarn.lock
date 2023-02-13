@@ -2066,6 +2066,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-plugin@npm:15.6.2":
+  version: 15.6.2
+  resolution: "@nrwl/nx-plugin@npm:15.6.2"
+  dependencies:
+    "@nrwl/devkit": 15.6.2
+    "@nrwl/jest": 15.6.2
+    "@nrwl/js": 15.6.2
+    "@nrwl/linter": 15.6.2
+    dotenv: ~10.0.0
+    fs-extra: ^11.1.0
+    tslib: ^2.3.0
+  checksum: 13c827084f0abe933dada585fe92a7612286a0992aa76ae49bb119f7619e32e2b437cc9c8737a904e172d1687196f7113dde0015648a50275dc3e9249d2efad2
+  languageName: node
+  linkType: hard
+
 "@nrwl/react@npm:15.6.2":
   version: 15.6.2
   resolution: "@nrwl/react@npm:15.6.2"
@@ -3515,11 +3530,13 @@ __metadata:
   dependencies:
     "@babel/preset-env": 7.20.2
     "@babel/preset-react": ^7.14.5
+    "@nrwl/devkit": 15.6.2
     "@nrwl/eslint-plugin-nx": 15.6.2
     "@nrwl/jest": 15.6.2
     "@nrwl/js": 15.6.2
     "@nrwl/linter": 15.6.2
     "@nrwl/nx-cloud": latest
+    "@nrwl/nx-plugin": 15.6.2
     "@nrwl/react": 15.6.2
     "@nrwl/rollup": 15.6.2
     "@nrwl/webpack": 15.6.2

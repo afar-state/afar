@@ -659,6 +659,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:15.0.2"\
       ],\
       [\
+        "@nrwl/nx-plugin",\
+        "npm:15.6.2"\
+      ],\
+      [\
         "@nrwl/react",\
         "npm:15.6.2"\
       ],\
@@ -4230,11 +4234,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@babel/preset-env", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:7.20.2"],\
             ["@babel/preset-react", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:7.18.6"],\
+            ["@nrwl/devkit", "virtual:493ab9b1352b28642766549e3fb9a8c3aefc4208f0d3662eb4dc0629d2fbe45ea68f83298ba9c8db506f18cda227b2acb9bbe6d7a9d72e5dc0f51c0408977a94#npm:15.6.2"],\
             ["@nrwl/eslint-plugin-nx", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:15.6.2"],\
             ["@nrwl/jest", "npm:15.6.2"],\
             ["@nrwl/js", "npm:15.6.2"],\
             ["@nrwl/linter", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:15.6.2"],\
             ["@nrwl/nx-cloud", "npm:15.0.2"],\
+            ["@nrwl/nx-plugin", "npm:15.6.2"],\
             ["@nrwl/react", "npm:15.6.2"],\
             ["@nrwl/rollup", "npm:15.6.2"],\
             ["@nrwl/webpack", "npm:15.6.2"],\
@@ -9056,6 +9062,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@nrwl/nx-plugin", [\
+        ["npm:15.6.2", {\
+          "packageLocation": "./.yarn/cache/@nrwl-nx-plugin-npm-15.6.2-985d00b5ff-13c827084f.zip/node_modules/@nrwl/nx-plugin/",\
+          "packageDependencies": [\
+            ["@nrwl/nx-plugin", "npm:15.6.2"],\
+            ["@nrwl/devkit", "virtual:cf756976ba83877a92483f5e093bf1d890fb4f7de32e308b53743c9e23c8c234358287b34290adc853cd75046e8f7de2b44b63f101425bfe128cae11d7631ed7#npm:15.6.2"],\
+            ["@nrwl/jest", "npm:15.6.2"],\
+            ["@nrwl/js", "npm:15.6.2"],\
+            ["@nrwl/linter", "virtual:5ab7921c28fd3ee959bbb5e60926c40d7aa81639f93a5f23728e0da8985a4977e9c3374ec45f408d2425049cac945810f2f309f8cc0f242ce458b4f5b987a994#npm:15.6.2"],\
+            ["dotenv", "npm:10.0.0"],\
+            ["fs-extra", "npm:11.1.0"],\
+            ["tslib", "npm:2.4.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@nrwl/react", [\
         ["npm:15.6.2", {\
           "packageLocation": "./.yarn/cache/@nrwl-react-npm-15.6.2-f867a1faae-fe1007cf39.zip/node_modules/@nrwl/react/",\
@@ -11076,11 +11098,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["afar", "workspace:."],\
             ["@babel/preset-env", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:7.20.2"],\
             ["@babel/preset-react", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:7.18.6"],\
+            ["@nrwl/devkit", "virtual:493ab9b1352b28642766549e3fb9a8c3aefc4208f0d3662eb4dc0629d2fbe45ea68f83298ba9c8db506f18cda227b2acb9bbe6d7a9d72e5dc0f51c0408977a94#npm:15.6.2"],\
             ["@nrwl/eslint-plugin-nx", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:15.6.2"],\
             ["@nrwl/jest", "npm:15.6.2"],\
             ["@nrwl/js", "npm:15.6.2"],\
             ["@nrwl/linter", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:15.6.2"],\
             ["@nrwl/nx-cloud", "npm:15.0.2"],\
+            ["@nrwl/nx-plugin", "npm:15.6.2"],\
             ["@nrwl/react", "npm:15.6.2"],\
             ["@nrwl/rollup", "npm:15.6.2"],\
             ["@nrwl/webpack", "npm:15.6.2"],\
