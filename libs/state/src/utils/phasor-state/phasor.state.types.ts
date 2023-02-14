@@ -8,16 +8,12 @@ export type Literal<T> = T extends string
 
 export type RunPhasor<N extends string, I> = {
   type: `${Literal<N>}/run`;
-  payload: {
-    input: I;
-  };
+  payload: I;
 };
 
 export type RerunPhasor<N extends string, I> = {
   type: `${Literal<N>}/rerun`;
-  payload: {
-    input: I;
-  };
+  payload: I;
 };
 
 export type PhasorActions<N extends string, I> =
@@ -36,3 +32,5 @@ export type PhasorActionsTotal<N extends string, I, D, E> =
 export type PhasorState<N extends string, I, D, E> = {
   [name in Literal<N>]: Phasor<I, D, E>
 };
+
+export type PhasorStateActions<P> = P extends PhasorState<infer N, infer I, infer D, infer E> ? PhasorActionsTotal<N, I, D, E> : never;
