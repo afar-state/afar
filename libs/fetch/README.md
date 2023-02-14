@@ -34,7 +34,6 @@ const fetchWithSession = start().tie(getSessionTie(mySessionId));
 Actually, I want to add a bearer token to all calls I make instead.
 
 ```ts
-// Note -> this Tie (alone) needs the jwt-decode package as a peerDependency.
 import { getAuthTie } from '@afar/fetch/ties/auth';
 import decode from 'jwt-decode'; // <- bring your own jwt decoder
 
