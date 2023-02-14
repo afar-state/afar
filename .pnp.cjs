@@ -2723,10 +2723,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.3.3"\
       ],\
       [\
-        "jwt-decode",\
-        "npm:3.1.2"\
-      ],\
-      [\
         "kind-of",\
         "npm:6.0.3"\
       ],\
@@ -2948,7 +2944,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "nanoid",\
-        "npm:4.0.1"\
+        "npm:3.3.4"\
       ],\
       [\
         "native-request",\
@@ -4266,8 +4262,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:4.6.0"],\
             ["jest", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:28.1.1"],\
             ["jest-environment-jsdom", "npm:28.1.1"],\
-            ["jwt-decode", "npm:3.1.2"],\
-            ["nanoid", "npm:4.0.1"],\
             ["nx", "virtual:493ab9b1352b28642766549e3fb9a8c3aefc4208f0d3662eb4dc0629d2fbe45ea68f83298ba9c8db506f18cda227b2acb9bbe6d7a9d72e5dc0f51c0408977a94#npm:15.6.2"],\
             ["prettier", "npm:2.8.3"],\
             ["react", "npm:18.2.0"],\
@@ -11130,8 +11124,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:4.6.0"],\
             ["jest", "virtual:cd6165f341556d6828771dd619decf1ac6d87cc25aceb1c0f2345ed7147f86dcd256d06470261b2838a3131021d27d2e71bacf5096df057ce73385ff454c3fe7#npm:28.1.1"],\
             ["jest-environment-jsdom", "npm:28.1.1"],\
-            ["jwt-decode", "npm:3.1.2"],\
-            ["nanoid", "npm:4.0.1"],\
             ["nx", "virtual:493ab9b1352b28642766549e3fb9a8c3aefc4208f0d3662eb4dc0629d2fbe45ea68f83298ba9c8db506f18cda227b2acb9bbe6d7a9d72e5dc0f51c0408977a94#npm:15.6.2"],\
             ["prettier", "npm:2.8.3"],\
             ["react", "npm:18.2.0"],\
@@ -16933,15 +16925,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["jwt-decode", [\
-        ["npm:3.1.2", {\
-          "packageLocation": "./.yarn/cache/jwt-decode-npm-3.1.2-bf3ab26591-20a4b072d4.zip/node_modules/jwt-decode/",\
-          "packageDependencies": [\
-            ["jwt-decode", "npm:3.1.2"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["kind-of", [\
         ["npm:6.0.3", {\
           "packageLocation": "./.yarn/cache/kind-of-npm-6.0.3-ab15f36220-3ab01e7b1d.zip/node_modules/kind-of/",\
@@ -17644,13 +17627,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/nanoid-npm-3.3.4-3d250377d6-2fddd6dee9.zip/node_modules/nanoid/",\
           "packageDependencies": [\
             ["nanoid", "npm:3.3.4"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:4.0.1", {\
-          "packageLocation": "./.yarn/cache/nanoid-npm-4.0.1-d3abfa88f9-21022a7910.zip/node_modules/nanoid/",\
-          "packageDependencies": [\
-            ["nanoid", "npm:4.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
