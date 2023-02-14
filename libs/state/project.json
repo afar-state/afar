@@ -12,7 +12,7 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "libs/state/**/*.{ts,tsx,js,jsx}"
+          "libs/state/**/*.ts"
         ]
       }
     },
@@ -27,7 +27,7 @@
         "tsConfig": "libs/state/tsconfig.lib.json",
         "assets": [
           "libs/state/*.md",
-          "libs/state/LICENCE"
+          "libs/state/LICENSE"
         ]
       }
     },
@@ -52,6 +52,15 @@
       },
       "dependsOn": [
         "build:exports"
+      ]
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs state {args.ver} {args.tag}"
+      },
+      "dependsOn": [
+        "build"
       ]
     },
     "test": {

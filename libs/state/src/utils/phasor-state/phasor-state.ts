@@ -54,6 +54,8 @@ export function toPhasor<
         }
       }
     }
+
+    return undefined;
   };
 
   return {
