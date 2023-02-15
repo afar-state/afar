@@ -8,5 +8,7 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "jest.jestCommandLine": "yarn jest",
-  "jestrunner.enableYarnPnpSupport": true
+  "jestrunner.enableYarnPnpSupport": true,
+  "cSpell.words": ["nrwl", "zustand"],
+  "eslint.validate": ["json"]
 }
