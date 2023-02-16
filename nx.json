@@ -1,11 +1,12 @@
 {
-  "$schema": "https://www.unpkg.com/nx@15.6.2/schemas/nx-schema.json",
+  "$schema": "https://www.unpkg.com/nx/schemas/nx-schema.json",
   "npmScope": "afar",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "build:exports", "lint", "test", "e2e"],
+        "useDaemonProcess": false
       }
     }
   },
