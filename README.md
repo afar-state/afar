@@ -2,6 +2,8 @@
 
 Afar - stands for **Async Functions As Reducers**. 
 
+[![CodeFactor](https://www.codefactor.io/repository/github/afar-state/afar/badge)](https://www.codefactor.io/repository/github/afar-state/afar)
+
 > Background: I maintain the [`csar`](https://www.npmjs.com/package/csar) library and I wanted to give it more structure and make it a bit more granular. So, I renamed it and made this monorepo for all things around this type of state management. This is the successor for `csar`.
 
 This is an [`nx`](https://nx.dev) monorepo that ships a few state management related libraries.
