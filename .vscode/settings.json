@@ -9,6 +9,11 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "jest.jestCommandLine": "yarn jest",
   "jestrunner.enableYarnPnpSupport": true,
-  "cSpell.words": ["nrwl", "zustand"],
-  "eslint.validate": ["json"]
+  "cSpell.words": [
+    "nrwl",
+    "zustand"
+  ],
+  "eslint.validate": [
+    "json"
+  ]
 }
