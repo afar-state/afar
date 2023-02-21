@@ -12,8 +12,5 @@
   "cSpell.words": [
     "nrwl",
     "zustand"
-  ],
-  "eslint.validate": [
-    "json"
   ]
 }
